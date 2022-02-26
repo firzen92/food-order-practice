@@ -14,7 +14,10 @@ export const MealContextProvider = (props) => {
   const updateCart = (item) => {
     let newCart = addedToCart.map((val) => {
       if (val.name == item.name) {
-        val = item;
+        if(item.amount) {
+          item.amount += val.amount;
+        }
+        val = JSON.parse(JSON.stringify(item));
       }
       return val;
     });

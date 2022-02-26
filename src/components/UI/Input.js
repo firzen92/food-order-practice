@@ -6,7 +6,7 @@ const Input = props => {
     return (
         <div className={styles.input}>
             <label>{props.label}</label>
-            <input type="number"/>
+            <input type="number" onChange={props.onChange}/>
         </div>
     )
 }
